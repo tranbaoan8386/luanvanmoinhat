@@ -23,6 +23,11 @@ app.use('/uploads', express.static(uploadsDirectory));
 require('./models/relationship');
 require('./database');
 
+app.get('/', (req, res) => {
+    res.send('Backend is running 🚀');
+});
+
+
 // Router + Error
 handleRouters(app);
 app.use(errorMiddleware);
