@@ -1,15 +1,11 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require('sequelize')
+const { env } = require('../config/env')
 
-const sequelize = new Sequelize(
-  process.env.MYSQLDATABASE,
-  process.env.MYSQLUSER,
-  process.env.MYSQLPASSWORD,
-  {
-    host: process.env.MYSQLHOST,
-    port: process.env.MYSQLPORT,
-    dialect: 'mysql',
+const sequelize = new Sequelize(env.MYSQL_DATABASE, env.MYSQL_USER, env.MYSQL_PASSWORD, {
     logging: false,
-  }
-);
+    host: env.MYSQL_HOST,
+    port: env.MYSQL_PORT,
+    dialect: env.SEQUELIZE_DIALECT,
+})
 
-module.exports = sequelize;
+module.exports = sequelize
