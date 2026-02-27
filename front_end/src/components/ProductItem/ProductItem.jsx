@@ -1,11 +1,11 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import productDefault from '../../assets/images/productDefault.png';
-import { formatCurrency, generateNameId } from '../../common';
-import ProductRating from '../ProudctRating/ProductRating';
-import './styles.scss';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import productDefault from "../../assets/images/productDefault.png";
+import { formatCurrency, generateNameId } from "../../common";
+import ProductRating from "../ProudctRating/ProductRating";
+import "./styles.scss";
+import { Link } from "react-router-dom";
 
 export default function ProductItem({
   id,
@@ -18,12 +18,12 @@ export default function ProductItem({
   weight,
 }) {
   const photo =
-    img && typeof img === 'string' && img.trim() !== '' ? img : productDefault;
+    img && typeof img === "string" && img.trim() !== "" ? img : productDefault;
 
   return (
     <Link to={`/${generateNameId(name, id)}`} className="grid-item">
       <Paper sx={{ p: 2 }}>
-        <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: "center" }}>
           <img height="147.6px" src={photo} alt={name} width="100%" />
         </Box>
 
@@ -40,7 +40,7 @@ export default function ProductItem({
                 </Typography>
                 <Typography
                   fontSize="12px"
-                  sx={{ textDecoration: 'line-through', color: '#888' }}
+                  sx={{ textDecoration: "line-through", color: "#888" }}
                 >
                   {formatCurrency(price)} VND
                 </Typography>
@@ -59,13 +59,13 @@ export default function ProductItem({
 
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
             mt: 1,
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <ProductRating rating={rating} />
             <Box padding="0 5px">|</Box>
             <Typography fontSize="13px" color="blue" component="span">

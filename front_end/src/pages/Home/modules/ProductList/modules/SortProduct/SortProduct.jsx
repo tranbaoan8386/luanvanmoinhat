@@ -3,7 +3,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Typography
+  Typography,
 } from "@mui/material";
 import { Box, useTheme } from "@mui/system";
 import { omit } from "lodash";
@@ -25,11 +25,11 @@ export default function SortProduct({ queryConfig }) {
         omit(
           {
             ...queryConfig,
-            sort_by: sortByValue
+            sort_by: sortByValue,
           },
-          ["order"]
-        )
-      ).toString()
+          ["order"],
+        ),
+      ).toString(),
     });
   };
 
@@ -43,8 +43,8 @@ export default function SortProduct({ queryConfig }) {
         search: createSearchParams({
           ...queryConfig,
           sort_by: "price",
-          order: orderValue
-        }).toString()
+          order: orderValue,
+        }).toString(),
       });
     }
   };
@@ -59,8 +59,8 @@ export default function SortProduct({ queryConfig }) {
         borderRadius: "8px",
         backgroundColor: "#EDEDED",
         [theme.breakpoints.down("md")]: {
-          justifyContent: "space-between"
-        }
+          justifyContent: "space-between",
+        },
       }}
     >
       <Typography
@@ -68,8 +68,8 @@ export default function SortProduct({ queryConfig }) {
           whiteSpace: "nowrap",
           mr: 5,
           [theme.breakpoints.down("md")]: {
-            display: "none"
-          }
+            display: "none",
+          },
         }}
         component="p"
       >
@@ -80,7 +80,7 @@ export default function SortProduct({ queryConfig }) {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          gap: "20px"
+          gap: "20px",
         }}
       >
         <MyButton
@@ -98,8 +98,8 @@ export default function SortProduct({ queryConfig }) {
           sx={{
             width: "50%",
             [theme.breakpoints.up("md")]: {
-              width: "400px"
-            }
+              width: "400px",
+            },
           }}
         >
           <FormControl

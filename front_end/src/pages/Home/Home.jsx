@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Box sx={{ mb: 3 }}>
       <Slider />
-      <Container maxWidth="xl"> {/* 👈 Giới hạn lại không quá to */}
+      <Container maxWidth="xl"> {/*  Giới hạn lại không quá to */}
         <ProductList />
       </Container>
     </Box>
